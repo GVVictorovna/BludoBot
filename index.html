@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Кухни мира</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin-bottom: 30px;
+    }
+    
+    .cuisine-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cuisine-button img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    
+    .cuisine-button:hover {
+      background-color: #e2e2e2;
+    }
+    
+    #history {
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Кухни мира</h1>
+    
+    <a onclick="showHistory('Французская')" class="cuisine-button">
+      <img src="france.jpg" alt="Французская кухня">
+      <span>Французская кухня</span>
+    </a>
+
+    <a onclick="showHistory('Испанская')" class="cuisine-button">
+      <img src="ispan.jpg" alt="Испанская кухня">
+      <span>Испанская кухня</span>
+    </a>
+
+    <a onclick="showHistory('Итальянская')" class="cuisine-button">
+      <img src="italia.jpg" alt="Итальянская кухня">
+      <span>Итальянская кухня</span>
+    </a>
+
+    <a onclick="showHistory('Японская')" class="cuisine-button">
+      <img src="japan.jpg" alt="Японская кухня">
+      <span>Японская кухня</span>
+    </a>
+
+    <div id="history"></div>
+  </div>
+
+  <script>
+    function showHistory(cuisine) {
+      var history = document.getElementById("history");
+      
+      switch (cuisine) {
+        case 'Французская':
+          history.innerHTML = '<h2>Французская кухня</h2><p>Французская кухня считается одной из самых романтичных и изысканных кухонь мира. Ее история берет начало от вековых традиций и знаменитых блюд, таких как эскарготы, фондю, фуа-гра и рагу. Французская кухня прославилась за пределами страны благодаря высокому качеству ингредиентов и виртуозной технике приготовления блюд.</p>';
+          break;
+        case 'Испанская':
+          history.innerHTML = '<h2>Испанская кухня</h2><p>Испанская кухня богата разнообразием ароматов и вкусов. Ее история уходит корнями в древние времена, наследуя традиции различных культур, которые оказали влияние на Испанию на протяжении веков. Знаменитые тапас, паэлья, хамон, газпачо - все это знакомые блюда испанской кухни, которые прославились по всему миру....</p>';
+          break;
+        case 'Итальянская':
+          history.innerHTML = '<h2>Итальянская кухня</h2><p>Итальянская кухня известна своими простыми, но неповторимыми блюдами. Она славится насыщенностью вкуса и использованием свежих ингредиентов. От пасты и пиццы до оливкового масла и свежих трав, итальянская кухня стала одной из самых популярных кухонь в мире, с богатой историей, связанной с региональными традициями и рецептами.</p>';
+          break;
+        case 'Японская':
+          history.innerHTML = '<h2>Японская кухня</h2><p>Японская кухня примечательна своим пониманием баланса и гармонии. Важно сохранять естественный вкус и текстуру ингредиентов, а также запечатлеть сезонность и искусство подачи. Суши, сашими, рамен, тэмпура, мисо - японские блюда характеризуются свежестью и простотой, что делает их уникальными и неповторимыми.</p>';
+          break;
+        default:
+          history.innerHTML = '';
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
